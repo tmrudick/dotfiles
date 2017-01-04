@@ -1,9 +1,16 @@
 # Add ~/bin to my path
 export PATH=~/bin:$PATH
 
+##### HISTORY #####
 # Keep lots of history
-export HISTSIZE=10000
 export HISTFILESIZE=1000000000
+export HISTSIZE=1000000
+export HISTTIMEFORMAT="%F %T "
+shopt -s cmdhist
+shopt -s histappend
+
+# Don't add duplicate lines into history
+HISTCONTROL=ignoreboth
 
 # Load other platform and work extras
 arch=$(uname -s)
