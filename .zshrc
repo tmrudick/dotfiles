@@ -3,7 +3,7 @@ export ZSH="/Users/tmr/.oh-my-zsh"
 
 # Set the terminal theme
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="avit"
+ZSH_THEME="spaceship"
 
 # Enable command auto-correction
 ENABLE_CORRECTION="true"
@@ -15,28 +15,14 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='code'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export EDITOR='vim'
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/tmr/tools/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tmr/tools/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/tmr/tools/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tmr/tools/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

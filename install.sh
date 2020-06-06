@@ -1,7 +1,7 @@
 #!/bin/bash
-! [ -d ~/.dotfile_backup ] && mkdir ~/.dotfile_backup
+#! [ -d ~/.dotfile_backup ] && mkdir ~/.dotfile_backup
 for i in .*; do
-  if ! [ "$i" == "." ] && ! [ "$i" == ".." ] && ! [ "$i" == ".git" ]; then
+  if ! [[ $i == "." ]] && ! [[ $i == ".." ]] && ! [[ $i == .git* ]]; then
     if [ -e ~/$i ]; then
       if ! ( cp ~/$i ~/.dotfile_backup/$i ) || ! ( rm ~/$i || unlink ~/$i ); then
         echo "Failed on $i" > /dev/stderr
@@ -16,5 +16,9 @@ for i in .*; do
     fi
   fi
 done
+
+# Link oh-my-zsh custom directory
+mv $ZSH_CUSTOM ~/.dotfile_backup/custom
+ln -s ohmyzsh $ZSH_CUSTOM
 
 exit 0
